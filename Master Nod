@@ -1,0 +1,20 @@
+Master Required Services
+1)API Server
+2)Controller Maneger
+
+
+sudo su
+kubeadm init
+
+# To start using your cluster, you need to run the following as a regular user:
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+# Alternatively, if you are the root user, you can run:
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+
+********* Master And Worker node connection [ CNI Container  Network Interface ]***********************
+kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
+ 
